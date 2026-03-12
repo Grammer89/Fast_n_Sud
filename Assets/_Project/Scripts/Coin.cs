@@ -10,8 +10,10 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Coin collected");
+
             MoneyManager.instance.AddCoins(value);
-            Destroy(gameObject); // distrugge la moneta raccolta
+            Destroy(gameObject);
         }
     }
 }
