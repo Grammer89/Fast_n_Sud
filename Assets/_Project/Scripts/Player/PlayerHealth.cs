@@ -8,9 +8,8 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         currentHP = maxHP;
-
         if (UIManager.instance != null)
-            UIManager.instance.UpdateHP(currentHP);
+            UIManager.instance.UpdateHearts(currentHP);
     }
 
     public void TakeDamage(int damage)
@@ -18,7 +17,7 @@ public class PlayerHealth : MonoBehaviour
         currentHP -= damage;
 
         if (UIManager.instance != null)
-            UIManager.instance.UpdateHP(currentHP);
+            UIManager.instance.UpdateHearts(currentHP);
 
         if (currentHP <= 0)
         {
