@@ -109,4 +109,13 @@ public class SaveSystem : MonoBehaviour
             Debug.LogError($"Non e' stato possibile caricre il gioco! " + e);
         }
     }
+
+    public void ResetProgressi()
+    {
+        GameState.Instance.TotalCoins = 0;
+        GameState.Instance.TopFiveScores = new int[5];
+        GameState.Instance.CanDoubleJump = false;
+
+        SaveGame();
+    }
 }
