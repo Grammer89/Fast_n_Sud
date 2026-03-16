@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
-        else if (_input.IsJumping && !_isDoubleJumping /*&& GameState.Instance.CanDoubleJump*/)
+        else if (_input.IsJumping && !_isDoubleJumping && GameState.Instance.CanDoubleJump)
         {
             _isDoubleJumping = true;
             Jump();
