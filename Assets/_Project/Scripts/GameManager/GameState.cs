@@ -67,6 +67,21 @@ public class GameState : MonoBehaviour
     private int[] _topFiveScores = new int[5];
     public int[] TopFiveScores { get { return _topFiveScores; } set { _topFiveScores = value; } }
 
+    private int _healthUpgrades = 0;
+    public int HealthUpgrades { get { return _healthUpgrades; } set { _healthUpgrades = value; } }
+
+    private bool _canUseBerserk = false;
+    public bool CanUseBerserk { get { return _canUseBerserk; } set { _canUseBerserk = value; } }
+
+    private int _berserkUpgrades = 0;
+    public int BerserkUpgrades { get { return _berserkUpgrades; } set { _berserkUpgrades = value; } }
+
+    private bool _canUseMagnet = false;
+    public bool CanUseMagnet { get { return _canUseMagnet; } set { _canUseMagnet = value; } }
+
+    private int _magnetUpgrades = 0;
+    public int MagnetUpgrades { get { return _magnetUpgrades; } set { _magnetUpgrades = value; } }
+
     private void Start()
     {
         SaveSystem.Instance.LoadGame();
@@ -75,7 +90,47 @@ public class GameState : MonoBehaviour
     public void UnlockDoubleJump()
     {
         _canDoubleJump = true;
-        Debug.Log("Hai sbloccato l'abilita' doppio salto!");
+        Debug.Log("Hai sbloccato l'abilita' Doppio Salto!");
+    }
+
+    public void BuyBerserkMode()
+    {
+        if (!_canUseBerserk)
+        {
+            _canUseBerserk = true;
+            Debug.Log("Hai sbloccato l'abilita' Berserk Mode!");
+        }
+        else
+        {
+            if (_berserkUpgrades <= 3)
+                _berserkUpgrades++;
+            else
+                Debug.LogWarning("Impossibile potenziare. Hai gia' 3 potenziamenti!");
+        }
+    }
+
+    public void BuyCoinMagnet()
+    {
+        if (!_canUseMagnet)
+        {
+            _canUseMagnet = true;
+            Debug.Log("Hai sbloccato l'abilita' Coin Magnet!");
+        }
+        else
+        {
+            if (_magnetUpgrades <= 3)
+                _magnetUpgrades++;
+            else
+                Debug.LogWarning("Impossibile potenziare. Hai gia' 3 potenziamenti!");
+        }
+    }
+
+    public void AddHealthUpgrade()
+    {
+        if(_healthUpgrades <= 3)
+            _healthUpgrades++;
+        else
+            Debug.LogWarning("Impossibile potenziare. Hai gia' 3 potenziamenti!");
     }
 
     public void AddCoinsToTotal(int coins)

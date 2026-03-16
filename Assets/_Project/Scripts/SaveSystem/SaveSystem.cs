@@ -69,6 +69,11 @@ public class SaveSystem : MonoBehaviour
             save.TotalCoins = GameState.Instance.TotalCoins;
             save.TopFiveScores = GameState.Instance.TopFiveScores;
             save.CanDoubleJump = GameState.Instance.CanDoubleJump;
+            save.HealthUpgrades = GameState.Instance.HealthUpgrades;
+            save.CanUseBerserk = GameState.Instance.CanUseBerserk;
+            save.BerserkUpgrades = GameState.Instance.BerserkUpgrades;
+            save.CanUseMagnet = GameState.Instance.CanUseMagnet;
+            save.MagnetUpgrades = GameState.Instance.MagnetUpgrades;
 
             string savePath = Application.persistentDataPath + "/SaveFile.json";
             string jsonText = JsonConvert.SerializeObject(save);
@@ -96,6 +101,11 @@ public class SaveSystem : MonoBehaviour
                 GameState.Instance.TotalCoins = data.TotalCoins;
                 GameState.Instance.TopFiveScores = data.TopFiveScores;
                 GameState.Instance.CanDoubleJump = data.CanDoubleJump;
+                GameState.Instance.HealthUpgrades = data.HealthUpgrades;
+                GameState.Instance.CanUseBerserk = data.CanUseBerserk;
+                GameState.Instance.BerserkUpgrades = data.BerserkUpgrades;
+                GameState.Instance.CanUseMagnet = data.CanUseMagnet;
+                GameState.Instance.MagnetUpgrades = data.MagnetUpgrades;
 
                 Debug.Log("File loaded");
             }
@@ -115,6 +125,11 @@ public class SaveSystem : MonoBehaviour
         GameState.Instance.TotalCoins = 0;
         GameState.Instance.TopFiveScores = new int[5];
         GameState.Instance.CanDoubleJump = false;
+        GameState.Instance.HealthUpgrades = 0;
+        GameState.Instance.CanUseBerserk = false;
+        GameState.Instance.BerserkUpgrades = 0;
+        GameState.Instance.CanUseMagnet = false;
+        GameState.Instance.MagnetUpgrades = 0;
 
         SaveGame();
     }
