@@ -59,13 +59,18 @@ public class GameState : MonoBehaviour
     #endregion
 
     private int _totalCoins;
-    public int TotalCoins { get { return _totalCoins; } }
+    public int TotalCoins { get { return _totalCoins; } set { _totalCoins = value; } }
 
     private bool _canDoubleJump = false;
-    public bool CanDoubleJump { get { return _canDoubleJump; } }
+    public bool CanDoubleJump { get { return _canDoubleJump; } set { _canDoubleJump = value; } }
 
     private int[] _topFiveScores = new int[5];
-    public int[] TopFiveScores { get { return _topFiveScores; } }
+    public int[] TopFiveScores { get { return _topFiveScores; } set { _topFiveScores = value; } }
+
+    private void Start()
+    {
+        SaveSystem.Instance.LoadGame();
+    }
 
     public void UnlockDoubleJump()
     {
