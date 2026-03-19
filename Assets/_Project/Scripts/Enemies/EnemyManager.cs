@@ -1,13 +1,10 @@
-using System;
-using System.Collections;
+
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
     [Header("Setting Enemies Prefab")]
-    [SerializeField]  private Enemy[] _enemyLevel1;
-    [SerializeField]  private Enemy[] _enemyLevel2;
-    [SerializeField]  private Enemy[] _enemyLevel3;
+    [SerializeField]  private Enemy[] _enemyLevel;
     [Header("Setting Timespawn Enemy")]
     [SerializeField] private float _timeSpawn;
     public float TimeSpawn
@@ -36,6 +33,13 @@ public class EnemyManager : MonoBehaviour
 
     }
 
+    public Enemy GetEnemy()
+    {
+        int index = Random.Range(0, _enemyLevel.Length);
+        return _enemyLevel[index];
+
+        Debug.Log("Recuperato il nemico numero " + index);
+    }
     // Update is called once per frame
     void Update()
     {

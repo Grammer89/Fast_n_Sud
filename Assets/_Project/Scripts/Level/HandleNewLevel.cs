@@ -2,17 +2,12 @@ using UnityEngine;
 
 public class HandleNewLevel : MonoBehaviour
 {
-
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag(Utility.PLAYERTAG))
         {
-
             GameObject nextLevel = LevelManager.Instance.GetLevel();
             SpawnNextLevel(nextLevel);
-
         }
     }
 

@@ -4,8 +4,11 @@ using UnityEngine.Pool;
 
 public class PoolEnemy : MonoBehaviour
 {
-    public Enemy _enemy;
-
+    private Enemy _enemy;
+    private void Awake()
+    {
+        _enemy = EnemyManager.Instance.GetEnemy();
+    }
     public enum PoolType
     {
         Stack,
@@ -42,10 +45,10 @@ public class PoolEnemy : MonoBehaviour
     Enemy CreatePooledItem()
     {
         //Devo instanziare il gameObject
-        
- 
+
         var enemy = Instantiate(_enemy);
         enemy.AddComponent<ReturnPool>().pool = Pool;  //Dopo lo spawn indico con questa istruzione ritorna l'oggetto nel pool
+        
         Debug.Log("Created Enemy" + enemy.gameObject.name);
         return enemy;
 
@@ -54,14 +57,13 @@ public class PoolEnemy : MonoBehaviour
     void OnReturnedToPool(Enemy enemy)
     {
         enemy.gameObject.SetActive(false);
-      
     }
 
     void OnTakeFromPool(Enemy enemy)
     {
         enemy.ResetValue();
         enemy.gameObject.SetActive(true);
-      
+
     }
     void OnDestroyPoolObject(Enemy enemy)
     {
@@ -80,9 +82,14 @@ public class PoolEnemy : MonoBehaviour
             var ps = Pool.Get();
             //ps.transform.position = Random.insideUnitSphere * 10;
             ps.transform.position = way.position;
-           
+
 
         }
-        //}
     }
+
+    public void SetEnemy(Enemy enemy)
+    {
+        _enemy = enemy;
+    }
+
 }

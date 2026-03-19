@@ -4,6 +4,7 @@ public class LevelManager : MonoBehaviour
 {
     [Header("Level Game Object")]
     [SerializeField] private GameObject[] _levelGameObject;
+   
 
     public static LevelManager Instance { get; protected set; }
 
@@ -49,5 +50,7 @@ public class LevelManager : MonoBehaviour
         int index = Random.Range(0, _levelGameObject.Length);
         Debug.Log("è stato scelto il livello: " + index);
         return _levelGameObject[index];
+
     }
+
 }

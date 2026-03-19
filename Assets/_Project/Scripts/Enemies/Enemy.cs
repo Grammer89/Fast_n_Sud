@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+
     }
 
     // Update is called once per frame

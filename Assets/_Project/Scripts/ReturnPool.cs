@@ -10,7 +10,6 @@ public class ReturnPool : MonoBehaviour
     void Start()
     {
         _enemy = GetComponent<Enemy>();
-
     }
 
     // Update is called once per frame
@@ -25,8 +24,9 @@ public class ReturnPool : MonoBehaviour
             }
         }
     }
-    //void OnEnemyStopped()
-    //{
-    //    pool.Release(_enemy);
-    //}
+
+    public void SetEnemy(Enemy enemy)
+    {
+        _enemy = enemy;
+    }
 }
