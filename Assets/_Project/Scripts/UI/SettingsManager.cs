@@ -7,24 +7,34 @@ public class SettingsManager : MonoBehaviour
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    public AudioSource musicSource;
+    // eventualmente aggiungere un array/list di SFX AudioSource in futuro
+
     public Toggle fullscreenToggle;
 
     // ---------------- AUDIO ----------------
 
+    // Controlla tutto l'audio
     public void SetMasterVolume(float value)
     {
         AudioListener.volume = value;
         PlayerPrefs.SetFloat("MasterVolume", value);
     }
 
-    public void SetMusicVolume(float value) // DA COLLEGARE L'AUDIO MANAGER 
+    // Controlla solo la musica
+    public void SetMusicVolume(float value)
     {
-        PlayerPrefs.SetFloat("MusicVolume", value); 
+        if (musicSource != null)
+            musicSource.volume = value;
+        PlayerPrefs.SetFloat("MusicVolume", value);
     }
 
+    // Controlla solo SFX (da collegare agli AudioSource dei suoni)
     public void SetSFXVolume(float value)
     {
-        PlayerPrefs.SetFloat("SFXVolume", value); // DA COLLEGARE SFX
+        // provare un foreach su tutti gli AudioSource SFX
+        // foreach(var sfx in sfxSources) sfx.volume = value;  //DA CAPIRE COME IMPLEMENTARE
+        PlayerPrefs.SetFloat("SFXVolume", value);
     }
 
     // ---------------- VIDEO ----------------
@@ -47,6 +57,8 @@ public class SettingsManager : MonoBehaviour
         // MUSIC
         float music = PlayerPrefs.GetFloat("MusicVolume", 1f);
         musicSlider.value = music;
+        if (musicSource != null)
+            musicSource.volume = music;
 
         // SFX
         float sfx = PlayerPrefs.GetFloat("SFXVolume", 1f);
