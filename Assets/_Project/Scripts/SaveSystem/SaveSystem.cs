@@ -132,5 +132,7 @@ public class SaveSystem : MonoBehaviour
         GameState.Instance.MagnetUpgrades = 0;
 
         SaveGame();
+
+        Debug.Log("Progressi resettati.");
     }
 }
