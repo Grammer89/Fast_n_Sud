@@ -9,8 +9,8 @@ public class TraslationLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = new Vector3(transform.position.x, transform.position.y, (transform.position.z + (Time.deltaTime * _velocity) * -1));
-        transform.position = direction;
+        Vector3 newPosition = new Vector3((transform.position.x + (Time.deltaTime * _velocity) ), transform.position.y, transform.position.z );
+        transform.position = newPosition ;
     }
 
 }

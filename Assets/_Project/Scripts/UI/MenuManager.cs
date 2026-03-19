@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour
     // START GAME
     public void StartGame()
     {
-        SceneManager.LoadScene("Level1"); // DA CAMBIARE DOPO CON IL NOME DELLA SCENA GIUSTA!!!!
+        SceneManager.LoadScene("Game"); // DA CAMBIARE DOPO CON IL NOME DELLA SCENA GIUSTA!!!!
     }
 
     // EXIT

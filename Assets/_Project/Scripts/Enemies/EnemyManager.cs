@@ -38,7 +38,6 @@ public class EnemyManager : MonoBehaviour
         int index = Random.Range(0, _enemyLevel.Length);
         return _enemyLevel[index];
 
-        Debug.Log("Recuperato il nemico numero " + index);
     }
     // Update is called once per frame
     void Update()
