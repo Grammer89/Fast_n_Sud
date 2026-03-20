@@ -4,18 +4,19 @@ using UnityEngine;
 public class SpawnEnemies : MonoBehaviour
 {
     [Header("Position Enemy")]
-    [SerializeField] Transform _way1;
-    [SerializeField] Transform _way2;
-    [SerializeField] Transform _way3;
+    [SerializeField] private Transform _way1;
+    [SerializeField] private Transform _way2;
+    [SerializeField] private Transform _way3;
     public static SpawnEnemies Instance { get; protected set; }
     private PoolEnemy _poolEnemy;
+
     void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
             _poolEnemy = GetComponent<PoolEnemy>();
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else if (Instance != this)
         {
@@ -30,7 +31,7 @@ public class SpawnEnemies : MonoBehaviour
 
     public IEnumerator Spawning()
     {
-        while (!LevelManager.Instance.LevelCompleted)
+        while (!LevelManager.Instance.LevelCompleted || (!GameManager.instance.IsGameOver))
         {
             StartCoroutine(SpawnEnemy(_way1));
             StartCoroutine(SpawnEnemy(_way2));
@@ -52,4 +53,5 @@ public class SpawnEnemies : MonoBehaviour
         yield break;
 
     }
+
 }

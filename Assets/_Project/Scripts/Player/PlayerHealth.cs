@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHP <= 0)
         {
             Die();
+            Debug.Log("Addio");
         }
     }
 

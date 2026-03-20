@@ -484,7 +484,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!136 &697208378
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -672,7 +672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &944809242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1508803887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -855,7 +855,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2020996823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1223,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Way1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6323028457529102795, guid: dfbbdcef4b3984848b4c9a2399c4b8c5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1290,6 +1295,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ====Level1====
+      objectReference: {fileID: 0}
+    - target: {fileID: 5409211010087979129, guid: eff9bc8288f78034b833ebed2770579b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1397,6 +1407,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Way1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5101012987246322131, guid: 1c0714c08e3b52346b3a777d5b605f04,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5239754664028481552, guid: 1c0714c08e3b52346b3a777d5b605f04,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1464,6 +1479,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Way1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4235333668383096010, guid: 0fddf5c1e0388e84ba7061a7b6a12d5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7192440990187611993, guid: 0fddf5c1e0388e84ba7061a7b6a12d5d,
         type: 3}

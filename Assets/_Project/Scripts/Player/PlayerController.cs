@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        _direction = new Vector3(_input.HorizontalMovement, 0f, 0f) * _speed;
+        _direction = new Vector3(0f, 0f, _input.HorizontalMovement) * _speed;
 
         if (_groundCheck.IsGrounded && _isDoubleJumping)
             _isDoubleJumping = false;

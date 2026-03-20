@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     private bool _levelCompleted;
     private int _level;
+    private bool _die;
     public bool LevelCompleted
     {
         get
@@ -27,6 +28,16 @@ public class LevelManager : MonoBehaviour
         set
         {
             _level += value;
+        }
+    }
+
+    public bool Die
+    {
+        get
+        { return _die; }
+        set
+        {
+            _die = value;
         }
     }
 
