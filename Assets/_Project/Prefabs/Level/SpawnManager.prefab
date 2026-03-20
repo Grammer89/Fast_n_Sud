@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b841f3c9ca518f49a2efb23e9aa2c91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poolType: 0
+  poolType: 1
   collectionChecks: 1
   maxPoolSize: 10
 --- !u!114 &174357324007696335

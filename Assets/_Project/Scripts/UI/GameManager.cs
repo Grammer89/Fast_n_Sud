@@ -16,6 +16,9 @@ public class GameManager : MonoBehaviour
     private float startZ;
     private bool isGameOver = false;
 
+    public bool IsGameOver {  get { return isGameOver; } }
+
+
     void Awake()
     {
         instance = this;
@@ -23,6 +26,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        isGameOver = false;
         startZ = player.position.z;
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
     }
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
         isGameOver = true;
 
         Time.timeScale = 0f; // ferma il gioco
-        if (gameOverPanel != null) gameOverPanel.SetActive(true);
+        if (gameOverPanel != null)  gameOverPanel.SetActive(true);
 
         // Calcolo score = distanza percorsa + monete raccolte
         float distance = player.position.z - startZ;
@@ -57,6 +61,6 @@ public class GameManager : MonoBehaviour
     public void ReturnToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenuScene");
+        SceneManager.LoadScene("Intro");
     }
 }

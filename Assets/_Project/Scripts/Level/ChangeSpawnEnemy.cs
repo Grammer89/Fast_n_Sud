@@ -6,7 +6,7 @@ public class ChangeSpawnEnemy : MonoBehaviour
 
     private void Awake()
     {
-     
+        //_poolEnemy.SetEnemy(EnemyManager.Instance.GetEnemy());
     }
     private void Update()
     {
