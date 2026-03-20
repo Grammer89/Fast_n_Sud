@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Raffaele.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/_Project/Scenes/Intro.unity
+    guid: 83f62684bfb312f488477cdfef0e959e
+  - enabled: 1
+    path: Assets/_Project/Scenes/Game.unity
+    guid: 807ce1ec35753924e9d45c68bfe20dcb
   m_configObjects: {}

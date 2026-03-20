@@ -4,10 +4,18 @@ using UnityEngine.Pool;
 
 public class PoolEnemy : MonoBehaviour
 {
-    private Enemy _enemy;
+    public Enemy _enemy;
     private void Awake()
     {
-        _enemy = EnemyManager.Instance.GetEnemy();
+        // //_enemy = EnemyManager.Instance.GetEnemy();
+        //if( _enemy != null )
+        //{
+        //    Debug.Log("Non è null");
+        //}
+        //else
+        //{
+        //    Debug.Log("è null");
+        //}
     }
     public enum PoolType
     {
@@ -48,7 +56,8 @@ public class PoolEnemy : MonoBehaviour
 
         var enemy = Instantiate(_enemy);
         enemy.AddComponent<ReturnPool>().pool = Pool;  //Dopo lo spawn indico con questa istruzione ritorna l'oggetto nel pool
-        
+        //ReturnPool _returnPool = GetComponent<ReturnPool>();
+        //_returnPool.SetEnemy(enemy);
         Debug.Log("Created Enemy" + enemy.gameObject.name);
         return enemy;
 
