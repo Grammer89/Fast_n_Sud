@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +11,7 @@ public class UIManager : MonoBehaviour
     public Sprite emptyHeart;        // Cuore grigio
 
     public TextMeshProUGUI coinText;
+    public TextMeshProUGUI scoreText;
 
     private void Awake()
     {
@@ -38,5 +37,11 @@ public class UIManager : MonoBehaviour
     {
         if (coinText != null)
             coinText.text = coins.ToString();
+    }
+
+    public void UpdateScore(int score)
+    {
+        if(scoreText != null)
+            scoreText.text = "SCORE: " + score.ToString();
     }
 }
