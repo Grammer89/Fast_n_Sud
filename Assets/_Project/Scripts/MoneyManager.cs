@@ -28,9 +28,7 @@ public class MoneyManager : MonoBehaviour
 
     public void SaveCoins()
     {
-        int totalCoins = PlayerPrefs.GetInt("Coins", 0);
-        totalCoins += currentCoins;
-        PlayerPrefs.SetInt("Coins", totalCoins);
+        GameState.Instance.AddCoinsToTotal(currentCoins);
     }
 
     public void ResetCoins()

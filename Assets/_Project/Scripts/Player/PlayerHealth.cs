@@ -28,9 +28,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        if (MoneyManager.instance != null)
-            MoneyManager.instance.SaveCoins();
-
         GameManager.instance.GameOver();
     }
 }
